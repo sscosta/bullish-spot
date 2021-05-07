@@ -20,9 +20,6 @@ def findGoldenCross(pairs):
 
         ema20 = talib.EMA(close, timeperiod=20)
         ema55 = talib.EMA(close, timeperiod=55)
-        #print(pair)
-        #print(ema20)
-        #print(ema55)
 
         weeksPrior = 4
         if len(ema20) >= weeksPrior + 1:
@@ -42,13 +39,11 @@ def getJson(url):
 
 exchangeInfoUrl = BASE_URL + PAIRS_ENDPOINT
 exchangeInfo =getJson(exchangeInfoUrl)["symbols"]
-#print(print(json.dumps(symbols, indent=4, sort_keys=True)))
   
 symbols = list(map(lambda s: s["symbol"], exchangeInfo))
 #print(symbols)
 
-usdts = list(filter(lambda p: 'USDT' in p, symbols))
-#usdts = list(symbols)
-#print(usts)
+#usdts = list(filter(lambda p: 'USDT' in p, symbols))
+usdts = list(symbols)
 
 findGoldenCross(usdts)

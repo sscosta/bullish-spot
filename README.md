@@ -10,3 +10,6 @@ Pre-requisites:
 Run the script:
 
 python golden-cross.py
+
+
+By default the program is designed to look at the four prior weeks. If you want to change it to a longer time-frame, edit line 24.
